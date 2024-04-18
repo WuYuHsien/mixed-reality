@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+      <!--floor-->
+      <a-box position="0 0 0.5" rotation="0 0 0" depth="3" width="3" height="0.1" color="#FFC65D"></a-box>
+      <!--ceiling-->
+      <a-box position="0 3 0.5" rotation="0 0 0" depth="3" width="3" height="0.1" color="#FFC65D"></a-box>
+      <!--front-->
+      <a-box position="0 1.5 2" rotation="90 0 0" depth="3" width="3" height="0.1" color="#FF2D2D"></a-box>
+      <!--back-->
+      <a-box position="0 1.5 -1" rotation="90 0 0" depth="3" width="3" height="0.1" color="#FF2D2D"></a-box>
+      <!--right-->
+      <a-box position="1.5 1.5 0.5" rotation="0 0 90" depth="3" width="3" height="0.1" color="#4CC3D9"></a-box>
+      <!--left-->
+      <a-box position="-1.5 1.5 0.5" rotation="0 0 90" depth="3" width="3" height="0.1" color="#4CC3D9"></a-box>
+
+      <a-text value="Turn Around" text.align="center" position="0 1.5 -0.9" align="center"></a-text>
+
+    </a-scene>
+
+  </body>
+</html>
