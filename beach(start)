@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+      <!--beach-->
+      <a-box position="0 0 -1" depth="4" width="8" height="0.5" color="#FFE153"></a-box>
+      <a-plane position="0 0 -3" rotation="-90 0 0" width="8" height="8" color="#46A3FF"></a-plane>
+      <!--sun-->
+      <a-sky color="#CAFFFF"></a-sky>
+      <a-sphere position="-2.5 5 -5" radius="0.5" color="#FFFF37"></a-sphere>
+      <!--tree-->
+      <a-cylinder position="3 1.5 0" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="3 3 0" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>     
+      <a-cylinder position="3 1.5 -1" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="3 3 -1" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="3 1.5 -2" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="3 3 -2" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="-3 1.5 0" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-3 3 0" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>     
+      <a-cylinder position="-3 1.5 -1" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-3 3 -1" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="-3 1.5 -2" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-3 3 -2" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <!--lift-->
+      <a-box position="0 0.5 -5" depth="1" width="1.5" height="2.5" color="#FF2D2D">
+        <a-entity cursor-listener></a-entity>
+        <a-link href="sea.html" title="Explore"></a-link>
+      </a-box>
+
+    </a-scene>
+
+    <script>
+      AFRAME.registerComponent('cursor-listener', {
+        init: function () {
+          var el = this.el;
+          el.addEventListener('click', function () {
+            window.location.href = el.querySelector('a-link').getAttribute('href');
+          });
+        }
+      });
+    </script>
+
+  </body>
+</html>
