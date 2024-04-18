@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+      <!--sea-->
+      <a-sky color="#46A3FF"></a-sky>
+      <a-plane position="0 0 -3" rotation="-90 0 0" width="8" height="8" color="#003D79"></a-plane>
+      <!--bubble-->
+      <a-entity id="bubble-container" position="0 1 -3"></a-entity>
+
+    </a-scene>
+
+
+    <script>
+        // bubble container
+        var bubbleContainer = document.getElementById('bubble-container');
+        var bubbleCount = 300; // amount
+        var bubbleRange = 10; // range
+        var bubbleSpeed = 0.01; // speed
+        // generation
+        function generateBubble() {
+          var bubbleSize = Math.random() * 0.05; // size
+          var bubblePositionX = (Math.random() - 0.5) * bubbleRange; // x axis
+          var bubblePositionZ = (Math.random() - 0.5) * bubbleRange; // z axis
+          var bubble = document.createElement('a-sphere');
+          bubble.setAttribute('radius', bubbleSize);
+          bubble.setAttribute('color', '#FFFFFF');
+          bubble.setAttribute('position', bubblePositionX + ' ' + -2 + ' ' + bubblePositionZ); // start position
+          bubbleContainer.appendChild(bubble);
+          // move upward
+          bubble.setAttribute('animation', {
+            property: 'position',
+            to: {x: bubblePositionX, y: 2, z: bubblePositionZ},
+            dur: Math.random() * 2000 + 2000, // time
+            easing: 'linear',
+            loop: true // won't stop
+          });
+        }
+        // initialise
+        for (var i = 0; i < bubbleCount; i++) {
+          generateBubble();
+        }
+      </script>
+
+
+  </body>
+</html>
