@@ -24,24 +24,23 @@
       <a-cone position="-3 3 -1" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
       <a-cylinder position="-3 1.5 -2" radius="0.2" height="2.5" color="#750000"></a-cylinder>
       <a-cone position="-3 3 -2" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
-      <!--lift-->
-      <a-box position="0 0.5 -5" depth="1" width="1.5" height="2.5" color="#FF2D2D">
-        <a-entity cursor-listener></a-entity>
-        <a-link href="sea.html" title="Explore"></a-link>
-      </a-box>
 
-    </a-scene>
-
-    <script>
-      AFRAME.registerComponent('cursor-listener', {
-        init: function () {
-          var el = this.el;
-          el.addEventListener('click', function () {
-            window.location.href = el.querySelector('a-link').getAttribute('href');
-          });
-        }
-      });
-    </script>
+        <!--lift-->
+        <a-box position="0 0.5 -5" depth="1" width="1.5" height="2.5" color="#FF2D2D" clickable>
+          <a-entity cursor-listener></a-entity>
+        </a-box>
+      </a-scene>
+      
+      <script>
+        AFRAME.registerComponent('cursor-listener', {
+          init: function () {
+            var el = this.el;
+            el.addEventListener('click', function () {
+              window.location.href = 'lift.html'; // 點擊後跳轉到 lift.html
+            });
+          }
+        });
+      </script>
 
   </body>
 </html>
