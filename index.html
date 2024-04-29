@@ -5,107 +5,24 @@
 
   <body>
     <a-scene>
-      <!--sea-->
-      <a-sky color="#46A3FF"></a-sky>
-      <a-plane position="0 0 -3" rotation="-90 0 0" width="8" height="8" color="#003D79"></a-plane>
-      <!--bubble-->
-      <a-entity id="bubble-container" position="0 1.5 -3"></a-entity>
+      <!--floor-->
+      <a-box position="0 0 0.5" rotation="0 0 0" depth="3" width="3" height="0.1" color="#FFC65D"></a-box>
+      <!--ceiling-->
+      <a-box position="0 3 0.5" rotation="0 0 0" depth="3" width="3" height="0.1" color="#FFC65D"></a-box>
+      <!--front-->
+      <a-box position="0 1.5 2" rotation="90 0 0" depth="3" width="3" height="0.1" color="#FF2D2D"></a-box>
+      <!--back-->
+      <a-box position="0 1.5 -1" rotation="90 0 0" depth="3" width="3" height="0.1" color="#FF2D2D"></a-box>
+      <!--right-->
+      <a-box position="1.5 1.5 0.5" rotation="0 0 90" depth="3" width="3" height="0.1" color="#4CC3D9"></a-box>
+      <!--left-->
+      <a-box position="-1.5 1.5 0.5" rotation="0 0 90" depth="3" width="3" height="0.1" color="#4CC3D9"></a-box>
 
-      <a-assets>
-          <a-mixin id="torus-knot-mixin" 
-                   torus-knot
-                   color="#B84A39"
-                   arc="180"
-                   p="2"
-                   q="7"
-                   radius="0.5"
-                   radius-tubular="0.01"></a-mixin>
-        </a-assets>
-      
-        <a-entity id="torus-knots">
-          <!-- 初始情况下不添加任何 torus-knot 元素 -->
-        </a-entity>
-      
-        <a-entity id="controller" laser-controls="hand: right"></a-entity>
-      
-        <a-camera position="0 1.6 0"></a-camera>
-
+      <a-text value="Turn Around" text.align="center" position="0 1.5 -0.9" align="center"></a-text>
 
     </a-scene>
+
+
+
   </body>
 </html>
-
-<script>
-  // bubble container
-  var bubbleContainer = document.getElementById('bubble-container');
-  var bubbleCount = 300; // amount
-  var bubbleRange = 10; // range
-  var bubbleSpeed = 0.01; // speed
-  // generation
-  function generateBubble() {
-    var bubbleSize = Math.random() * 0.05; // size
-    var bubblePositionX = (Math.random() - 0.5) * bubbleRange; // x axis
-    var bubblePositionZ = (Math.random() - 0.5) * bubbleRange; // z axis
-    var bubble = document.createElement('a-sphere');
-    bubble.setAttribute('radius', bubbleSize);
-    bubble.setAttribute('color', '#FFFFFF');
-    bubble.setAttribute('position', bubblePositionX + ' ' + -2 + ' ' + bubblePositionZ); // start position
-    bubbleContainer.appendChild(bubble);
-    // move upward
-    bubble.setAttribute('animation', {
-      property: 'position',
-      to: {x: bubblePositionX, y: 2, z: bubblePositionZ},
-      dur: Math.random() * 2000 + 2000, // time
-      easing: 'linear',
-      loop: true // won't stop
-    });
-  }
-  // initialise
-  for (var i = 0; i < bubbleCount; i++) {
-    generateBubble();
-  }
-
-
-    // 循环生成 torus-knot 元素
-function generateTorusKnots() {
-var torusKnots = document.getElementById('torus-knots');
-var torusKnotMixin = document.getElementById('torus-knot-mixin');
-
-for (var i = 0; i < 10; i++) {
-var torusKnot = document.createElement('a-entity');
-torusKnot.setAttribute('mixin', 'torus-knot-mixin');
-torusKnot.setAttribute('position', {
-  x: Math.random() * 10 - 5, // 随机位置
-  y: Math.random() * 4 + 1,   // 随机高度
-  z: Math.random() * 10 - 5   // 随机位置
-});
-torusKnots.appendChild(torusKnot);
-}
-}
-
-// 开始生成 torus-knot 元素
-generateTorusKnots();
-
-// 添加动画效果，使 torus-knot 元素飞来飞去
-AFRAME.registerComponent('torus-knot-animation', {
-init: function () {
-var el = this.el;
-var initialPosition = el.getAttribute('position');
-
-el.setAttribute('animation', {
-  property: 'position',
-  to: { x: initialPosition.x + 1, y: initialPosition.y, z: initialPosition.z }, // 飞行到的位置
-  loop: true, // 循环动画
-  dir: 'alternate', // 往返动画
-  dur: 2000 // 动画周期
-});
-}
-});
-
-// 为每个 torus-knot 元素添加动画组件
-var torusKnots = document.querySelectorAll('[torus-knot]');
-torusKnots.forEach(function (torusKnot) {
-torusKnot.setAttribute('torus-knot-animation', '');
-});
-
-</script>
