@@ -5,85 +5,107 @@
 
   <body>
     <a-scene>
-      <!--beach-->
-      <a-box position="0 0 -4" depth="10" width="6" height="0.5" color="#FFE153"></a-box>
-      <a-plane position="0 0 -6" rotation="-90 0 0" width="30" height="30" color="#46A3FF"></a-plane>
-      <!--sun-->
-      <a-sky color="#CAFFFF"></a-sky>
-      <a-sphere position="0 6.5 -8" radius="0.5" color="#FFFF37"></a-sphere>
-      <!--NPC-->
-      <a-sphere position="2 1.5 -8" radius="0.3" color="#003D79"></a-sphere>
-      <a-cone position="2 0 -8" color="#003D79" radius-bottom="1" height="3.5"></a-cone>
-      <a-sphere position="-2 1.5 -8" radius="0.3" color="#BF0060"></a-sphere>
-      <a-cone position="-2 0 -8" color="#BF0060" radius-bottom="1" height="3.5"></a-cone>
-      <!--tree-->
-      <a-cylinder position="2.5 1.5 0" radius="0.2" height="2.5" color="#750000"></a-cylinder>
-      <a-cone position="2.5 3.5 0" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>     
-      <a-cylinder position="2.5 1.5 -1.2" radius="0.2" height="2.5" color="#750000"></a-cylinder>
-      <a-cone position="2.5 3.5 -1.2" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
-      <a-cylinder position="2.5 1.5 -2.4" radius="0.2" height="2.5" color="#750000"></a-cylinder>
-      <a-cone position="2.5 3.5 -2.4" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
-      <a-cylinder position="2.5 1.5 -3.6" radius="0.2" height="2.5" color="#750000"></a-cylinder>
-      <a-cone position="2.5 3.5 -3.6" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
-      <a-cylinder position="2.5 1.5 -4.8" radius="0.2" height="2.5" color="#750000"></a-cylinder>
-      <a-cone position="2.5 3.5 -4.8" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
-      <a-cylinder position="2.5 1.5 -6" radius="0.2" height="2.5" color="#750000"></a-cylinder>
-      <a-cone position="2.5 3.5 -6" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
-      <a-cylinder position="-2.5 1.5 0" radius="0.2" height="2.5" color="#750000"></a-cylinder>
-      <a-cone position="-2.5 3.5 0" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>     
-      <a-cylinder position="-2.5 1.5 -1.2" radius="0.2" height="2.5" color="#750000"></a-cylinder>
-      <a-cone position="-2.5 3.5 -1.2" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
-      <a-cylinder position="-2.5 1.5 -2.4" radius="0.2" height="2.5" color="#750000"></a-cylinder>
-      <a-cone position="-2.5 3.5 -2.4" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
-      <a-cylinder position="-2.5 1.5 -3.6" radius="0.2" height="2.5" color="#750000"></a-cylinder>
-      <a-cone position="-2.5 3.5 -3.6" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
-      <a-cylinder position="-2.5 1.5 -4.8" radius="0.2" height="2.5" color="#750000"></a-cylinder>
-      <a-cone position="-2.5 3.5 -4.8" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
-      <a-cylinder position="-2.5 1.5 -6" radius="0.2" height="2.5" color="#750000"></a-cylinder>
-      <a-cone position="-2.5 3.5 -6" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <!--sea-->
+      <a-sky color="#46A3FF"></a-sky>
+      <a-plane position="0 0 -3" rotation="-90 0 0" width="8" height="8" color="#003D79"></a-plane>
+      <!--bubble-->
+      <a-entity id="bubble-container" position="0 1.5 -3"></a-entity>
 
-        <!--lift-->
-        <a-box position="0 1 -9.5" depth="1" width="2" height="3" color="#FF2D2D" clickable>
-          <a-entity cursor-listener></a-entity>
-        </a-box>
-
-          <a-text value="Talk to me" position="2 2 -8" color="#000000" align="center"></a-text>
-          <a-text value="Please go" position="-2 2 -8" color="#000000" align="center"></a-text>
+      <a-assets>
+          <a-mixin id="torus-knot-mixin" 
+                   torus-knot
+                   color="#B84A39"
+                   arc="180"
+                   p="2"
+                   q="7"
+                   radius="0.5"
+                   radius-tubular="0.01"></a-mixin>
+        </a-assets>
       
-
-      </a-scene>
-
+        <a-entity id="torus-knots">
+          <!-- 初始情况下不添加任何 torus-knot 元素 -->
+        </a-entity>
       
+        <a-entity id="controller" laser-controls="hand: right"></a-entity>
+      
+        <a-camera position="0 1.6 0"></a-camera>
 
-      <script>
-        AFRAME.registerComponent('cursor-listener', {
-          init: function () {
-            var el = this.el;
-            var talkText = el.querySelector('a-text[value="Talk to me"]');
-            var goText = el.querySelector('a-text[value="Please go"]');
-      
-            el.addEventListener('click', function () {
-              // 點擊後切換文字
-              if (talkText && goText) {
-                talkText.setAttribute('value', '');
-                goText.setAttribute('value', 'Please go');
-              }
-            });
-          }
-        });
-      </script>
-      
-      
-      <script>
-        AFRAME.registerComponent('cursor-listener', {
-          init: function () {
-            var el = this.el;
-            el.addEventListener('click', function () {
-              window.location.href = 'lift.html'; // 點擊後跳轉到 lift.html
-            });
-          }
-        });
-      </script>
 
+    </a-scene>
   </body>
 </html>
+
+<script>
+  // bubble container
+  var bubbleContainer = document.getElementById('bubble-container');
+  var bubbleCount = 300; // amount
+  var bubbleRange = 10; // range
+  var bubbleSpeed = 0.01; // speed
+  // generation
+  function generateBubble() {
+    var bubbleSize = Math.random() * 0.05; // size
+    var bubblePositionX = (Math.random() - 0.5) * bubbleRange; // x axis
+    var bubblePositionZ = (Math.random() - 0.5) * bubbleRange; // z axis
+    var bubble = document.createElement('a-sphere');
+    bubble.setAttribute('radius', bubbleSize);
+    bubble.setAttribute('color', '#FFFFFF');
+    bubble.setAttribute('position', bubblePositionX + ' ' + -2 + ' ' + bubblePositionZ); // start position
+    bubbleContainer.appendChild(bubble);
+    // move upward
+    bubble.setAttribute('animation', {
+      property: 'position',
+      to: {x: bubblePositionX, y: 2, z: bubblePositionZ},
+      dur: Math.random() * 2000 + 2000, // time
+      easing: 'linear',
+      loop: true // won't stop
+    });
+  }
+  // initialise
+  for (var i = 0; i < bubbleCount; i++) {
+    generateBubble();
+  }
+
+
+    // 循环生成 torus-knot 元素
+function generateTorusKnots() {
+var torusKnots = document.getElementById('torus-knots');
+var torusKnotMixin = document.getElementById('torus-knot-mixin');
+
+for (var i = 0; i < 10; i++) {
+var torusKnot = document.createElement('a-entity');
+torusKnot.setAttribute('mixin', 'torus-knot-mixin');
+torusKnot.setAttribute('position', {
+  x: Math.random() * 10 - 5, // 随机位置
+  y: Math.random() * 4 + 1,   // 随机高度
+  z: Math.random() * 10 - 5   // 随机位置
+});
+torusKnots.appendChild(torusKnot);
+}
+}
+
+// 开始生成 torus-knot 元素
+generateTorusKnots();
+
+// 添加动画效果，使 torus-knot 元素飞来飞去
+AFRAME.registerComponent('torus-knot-animation', {
+init: function () {
+var el = this.el;
+var initialPosition = el.getAttribute('position');
+
+el.setAttribute('animation', {
+  property: 'position',
+  to: { x: initialPosition.x + 1, y: initialPosition.y, z: initialPosition.z }, // 飞行到的位置
+  loop: true, // 循环动画
+  dir: 'alternate', // 往返动画
+  dur: 2000 // 动画周期
+});
+}
+});
+
+// 为每个 torus-knot 元素添加动画组件
+var torusKnots = document.querySelectorAll('[torus-knot]');
+torusKnots.forEach(function (torusKnot) {
+torusKnot.setAttribute('torus-knot-animation', '');
+});
+
+</script>
