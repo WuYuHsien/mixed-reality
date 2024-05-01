@@ -10,103 +10,50 @@
       <a-entity laser-controls="hand: left"></a-entity>
       <a-entity camera look-controls></a-entity>
       <a-camera position="0 1.6 0"></a-camera>
+
+      <!--beach-->
+      <a-box position="0 0 -1" depth="4" width="6" height="0.5" color="#FFE153"></a-box>
+      <a-plane position="0 0 -5" rotation="-90 0 0" width="30" height="30" color="#46A3FF"></a-plane>
+      <!--sun-->
+      <a-sky color="#CAFFFF"></a-sky>
+      <a-sphere position="0 6.5 -5" radius="0.5" color="#FFFF37"></a-sphere>
+
+      <!--NPC-->
+      <a-sphere position="1.5 1.5 -2.5" radius="0.3" color="#003D79"></a-sphere>
+      <a-cone position="1.5 0 -2.5" color="#003D79" radius-bottom="1" height="3.5"></a-cone>
+      <a-sphere position="-1.5 1.5 -2.5" radius="0.3" color="#BF0060"></a-sphere>
+      <a-cone position="-1.5 0 -2.5" color="#BF0060" radius-bottom="1" height="3.5"></a-cone>
+      <a-text value="Help us catch the monsters" scale="0.5 0.5 0.5" position="1.5 2 -2.5" color="#000000" align="center"></a-text>
+      <a-text value="Dive into the sea" scale="0.5 0.5 0.5" position="-1.5 2.1 -2.5" color="#000000" align="center"></a-text>
+      <a-text value="with this little house" scale="0.5 0.5 0.5" position="-1.5 1.9 -2.5" color="#000000" align="center"></a-text>
+
+      <!--tree-->
+      <a-cylinder position="2.5 1.5 0.5" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="2.5 3.5 0.5" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>     
+      <a-cylinder position="2.5 1.5 -0.5" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="2.5 3.5 -0.5" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="2.5 1.5 -1.5" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="2.5 3.5 -1.5" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="-2.5 1.5 0.5" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-2.5 3.5 0.5" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>     
+      <a-cylinder position="-2.5 1.5 -0.5" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-2.5 3.5 -0.5" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="-2.5 1.5 -1.5" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-2.5 3.5 -1.5" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
       
-      <!--sea-->
-      <a-sky color="#46A3FF"></a-sky>
-      <a-plane position="0 0 0" rotation="-90 0 0" width="5" height="5" color="#003D79"></a-plane>
-      <!--bubble-->
-      <a-entity id="bubble-container" position="0 1.5 0"></a-entity>
-
       <!--lift-->
-      <a-cone position="0 3 4" rotation="0 45 0" radius-bottom="2" radius-top="0" height="1.5" color="#E0E0E0" segments-radial="4"></a-cone>
-      <a-box position="0 1 4" depth="2" width="2" height="3" color="#FF2D2D" onclick="goToBackPage()"></a-box>
-      <a-text value="Go Back" position="0 1.5 2.9" rotation="0 180 0" color="#FFFFFF" align="center"></a-text>
-      <a-text value="(click here)" position="0 1.2 2.9" rotation="0 180 0" color="#FFFFFF" align="center"></a-text>
-
-      <!--monsters-->
-      <a-torus-knot position="0 0.25 0" color="#FFFF37" rotation="90 0 0" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" scale="0.03 0.03 0.03" random-move click-to-transparent></a-torus-knot>
-      <a-torus-knot position="0 0.25 0" color="#FFFF37" rotation="90 0 0" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" scale="0.03 0.03 0.03" random-move click-to-transparent></a-torus-knot>
-      <a-torus-knot position="0 0.25 0" color="#4EFEB3" rotation="90 0 0" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" scale="0.03 0.03 0.03" random-move click-to-transparent></a-torus-knot>
-      <a-torus-knot position="0 0.25 0" color="#4EFEB3" rotation="90 0 0" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" scale="0.03 0.03 0.03" random-move click-to-transparent></a-torus-knot>
-      <a-torus-knot position="0 0.25 0" color="#B15BFF" rotation="90 0 0" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" scale="0.03 0.03 0.03" random-move click-to-transparent></a-torus-knot>
-      <a-torus-knot position="0 0.25 0" color="#B15BFF" rotation="90 0 0" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" scale="0.03 0.03 0.03" random-move click-to-transparent></a-torus-knot>
-      <a-torus-knot position="0 0.25 0" color="#FF60AF" rotation="90 0 0" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" scale="0.03 0.03 0.03" random-move click-to-transparent></a-torus-knot>
-      <a-torus-knot position="0 0.25 0" color="#FF60AF" rotation="90 0 0" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" scale="0.03 0.03 0.03" random-move click-to-transparent></a-torus-knot>
-      <a-torus-knot position="0 0.25 0" color="#4DFFFF" rotation="90 0 0" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" scale="0.03 0.03 0.03" random-move click-to-transparent></a-torus-knot>
-      <a-torus-knot position="0 0.25 0" color="#4DFFFF" rotation="90 0 0" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" scale="0.03 0.03 0.03" random-move click-to-transparent></a-torus-knot>
-
-
-      <a-octahedron position="0 2.5 -2" color="#FF926B" radius="5" scale="0.05 0.05 0.05"></a-octahedron>
-
+      <a-cone position="0 3 -4" rotation="0 45 0" radius-bottom="2" radius-top="0" height="1.5" color="#E0E0E0" segments-radial="4"></a-cone>
+      <a-box position="0 1 -4" depth="2" width="2" height="3" color="#FF2D2D" onclick="goToLiftPage()"></a-box>
+      <a-text value="Enter" position="0 1.5 -3" color="#FFFFFF" align="center"></a-text>
+      <a-text value="(click here)" position="0 1.2 -3" color="#FFFFFF" align="center"></a-text>
     </a-scene>
 
-        <!--change scene-->
-        <script>
-          function goToBackPage() {
-            window.location.href = 'file:///C:/Users/User/Desktop/back.html';
-          }
-        </script>
-
-<script>
-  AFRAME.registerComponent('random-move', {
-    init: function () {
-      var el = this.el;
-      var position = el.getAttribute('position');
-      var speed = 0.01; // adjust the speed of movement
-      var initialX = position.x;
-      var initialZ = position.z;
-      var range = 2;
-
-      function updatePosition() {
-        var x = initialX + (Math.random() * range * 2 - range);
-        var z = initialZ + (Math.random() * range * 2 - range);
-        el.setAttribute('position', { x: x, y: position.y, z: z });
+    <!--change scene-->
+    <script>
+      function goToLiftPage() {
+        window.location.href = 'file:///C:/Users/User/Desktop/lift.html';
       }
-
-      setInterval(updatePosition, 1000); // adjust the interval as needed
-    }
-  });
-
-  AFRAME.registerComponent('click-to-transparent', {
-    init: function () {
-      var el = this.el;
-      el.addEventListener('click', function () {
-        el.setAttribute('material', 'opacity: 0');
-      });
-    }
-  });
-</script>
+    </script>
 
   </body>
 </html>
-
-<script>
-  // bubble container
-  var bubbleContainer = document.getElementById('bubble-container');
-  var bubbleCount = 300; // amount
-  var bubbleRange = 10; // range
-  var bubbleSpeed = 0.01; // speed
-  // generation
-  function generateBubble() {
-    var bubbleSize = Math.random() * 0.05; // size
-    var bubblePositionX = (Math.random() - 0.5) * bubbleRange; // x axis
-    var bubblePositionZ = (Math.random() - 0.5) * bubbleRange; // z axis
-    var bubble = document.createElement('a-sphere');
-    bubble.setAttribute('radius', bubbleSize);
-    bubble.setAttribute('color', '#FFFFFF');
-    bubble.setAttribute('position', bubblePositionX + ' ' + -2 + ' ' + bubblePositionZ); // start position
-    bubbleContainer.appendChild(bubble);
-    // move upward
-    bubble.setAttribute('animation', {
-      property: 'position',
-      to: {x: bubblePositionX, y: 2, z: bubblePositionZ},
-      dur: Math.random() * 2000 + 2000, // time
-      easing: 'linear',
-      loop: true // won't stop
-    });
-  }
-  // initialise
-  for (var i = 0; i < bubbleCount; i++) {
-    generateBubble();
-  }
-</script>
