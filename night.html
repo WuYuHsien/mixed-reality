@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+      <!--beach-->
+      <a-box position="0 0 -4" depth="10" width="6" height="0.5" color="#FFE153"></a-box>
+      <a-plane position="0 0 -6" rotation="-90 0 0" width="30" height="30" color="#46A3FF"></a-plane>
+      <!--sun-->
+      <a-sky color="#CAFFFF"></a-sky>
+      <a-sphere position="0 6.5 -8" radius="0.5" color="#FFFF37"></a-sphere>
+      <!--NPC-->
+      <a-sphere position="1 1.5 -8" radius="0.3" color="#003D79"></a-sphere>
+      <a-cone position="1 0 -8" color="#003D79" radius-bottom="1" height="3.5"></a-cone>
+      <a-sphere position="-1 1.5 -8" radius="0.3" color="#BF0060"></a-sphere>
+      <a-cone position="-1 0 -8" color="#BF0060" radius-bottom="1" height="3.5"></a-cone>
+      <!--tree-->    
+      <a-cylinder position="2.5 1.5 -1.2" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="2.5 3.5 -1.2" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="2.5 1.5 -2.4" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="2.5 3.5 -2.4" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="2.5 1.5 -3.6" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="2.5 3.5 -3.6" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="2.5 1.5 -4.8" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="2.5 3.5 -4.8" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="2.5 1.5 -6" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="2.5 3.5 -6" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="2.5 1.5 -7.2" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="2.5 3.5 -7.2" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>    
+      <a-cylinder position="-2.5 1.5 -1.2" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-2.5 3.5 -1.2" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="-2.5 1.5 -2.4" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-2.5 3.5 -2.4" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="-2.5 1.5 -3.6" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-2.5 3.5 -3.6" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="-2.5 1.5 -4.8" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-2.5 3.5 -4.8" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="-2.5 1.5 -6" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-2.5 3.5 -6" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="-2.5 1.5 -7.2" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-2.5 3.5 -7.2" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>  
+
+        <!--lift-->
+        <a-box position="0 1 2" depth="2" width="2" height="3" color="#FF2D2D" clickable></a-box>
+        <a-cone position="0 3 2" rotation="0 45 0" radius-bottom="2" radius-top="0" height="1.5" color="#E0E0E0" segments-radial="4"></a-cone>
+        
+
+          <a-text value="Talk to me" position="2 2 -8" color="#000000" align="center"></a-text>
+          <a-text value="Please go" position="-2 2 -8" color="#000000" align="center"></a-text>
+      
+
+      </a-scene>
+  </body>
+</html>
