@@ -37,12 +37,12 @@
       <a-torus-knot position="0 0.25 0" color="#FF0000" rotation="90 0 0" arc="180" p="2" q="7" radius="5" radius-tubular="0.1" scale="0.03 0.03 0.03" random-move></a-torus-knot>
 
       <!--monsters-->
-      <a-octahedron position="-1 2.3 2" color="#FFFF37" radius="5" scale="0.05 0.05 0.05" class="clickable"></a-octahedron>
-      <a-octahedron position="1 2.3 2" color="#4EFEB3" radius="5" scale="0.05 0.05 0.05" class="clickable"></a-octahedron>
-      <a-octahedron position="2 2.3 -1.5" color="#B15BFF" radius="5" scale="0.05 0.05 0.05" class="clickable"></a-octahedron>
-      <a-octahedron position="2 2.3 0.5" color="#FF60AF" radius="5" scale="0.05 0.05 0.05" class="clickable"></a-octahedron>
-      <a-octahedron position="-2 2.3 -1.5" color="#4DFFFF" radius="5" scale="0.05 0.05 0.05" class="clickable"></a-octahedron>
-      <a-octahedron position="-2 2.3 0.5" color="#FF0000" radius="5" scale="0.05 0.05 0.05" class="clickable"></a-octahedron>
+      <a-octahedron position="-1 2.3 2" color="#FFFF37" radius="5" scale="0.05 0.05 0.05" class="clickable" click-handler></a-octahedron>
+      <a-octahedron position="1 2.3 2" color="#4EFEB3" radius="5" scale="0.05 0.05 0.05" class="clickable" click-handler></a-octahedron>
+      <a-octahedron position="2 2.3 -1.5" color="#B15BFF" radius="5" scale="0.05 0.05 0.05" class="clickable" click-handler></a-octahedron>
+      <a-octahedron position="2 2.3 0.5" color="#FF60AF" radius="5" scale="0.05 0.05 0.05" class="clickable" click-handler></a-octahedron>
+      <a-octahedron position="-2 2.3 -1.5" color="#4DFFFF" radius="5" scale="0.05 0.05 0.05" class="clickable" click-handler></a-octahedron>
+      <a-octahedron position="-2 2.3 0.5" color="#FF0000" radius="5" scale="0.05 0.05 0.05" class="clickable" click-handler></a-octahedron>
 
       <!-- Click event handler -->
       <script>
@@ -113,6 +113,11 @@
       loop: true // won't stop
     });
   }
+  // initialise
+  for (var i = 0; i < bubbleCount; i++) {
+    generateBubble();
+  }
+</script>
   // initialise
   for (var i = 0; i < bubbleCount; i++) {
     generateBubble();
