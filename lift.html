@@ -4,23 +4,45 @@
   </head>
 
   <body>
-    <a-scene>
+    <a-scene vr-mode-ui="enabled: true">
+      <!--VR environment -->
+      <a-entity laser-controls="hand: right"></a-entity>
+      <a-entity laser-controls="hand: left"></a-entity>
+      <a-entity camera look-controls></a-entity>
+      <a-camera position="0 1.6 0"></a-camera>
+
       <!--floor-->
-      <a-box position="0 0 0.5" rotation="0 0 0" depth="3" width="3" height="0.1" color="#FFC65D"></a-box>
+      <a-box position="0 0 0" rotation="0 0 0" depth="3" width="3" height="0.1" color="#FFC65D"></a-box>
       <!--ceiling-->
-      <a-box position="0 3 0.5" rotation="0 0 0" depth="3" width="3" height="0.1" color="#FFC65D"></a-box>
+      <a-box position="0 3 0" rotation="0 0 0" depth="3" width="3" height="0.1" color="#FFC65D"></a-box>
       <!--front-->
-      <a-box position="0 1.5 2" rotation="90 0 0" depth="3" width="3" height="0.1" color="#FF2D2D"></a-box>
-      <!--back-->
-      <a-box position="0 1.5 -1" rotation="90 0 0" depth="3" width="3" height="0.1" color="#FF2D2D"></a-box>
+      <a-box position="0 1.5 -1.5" rotation="90 0 0" depth="3" width="3" height="0.1" color="#FF2D2D"></a-box>
+      <a-text value="Turn Around" text.align="center" position="0 1.5 -1.4" color="#000000" align="center"></a-text>
       <!--right-->
-      <a-box position="1.5 1.5 0.5" rotation="0 0 90" depth="3" width="3" height="0.1" color="#4CC3D9"></a-box>
+      <a-box position="1.5 1.5 0" rotation="0 0 90" depth="3" width="3" height="0.1" color="#4CC3D9"></a-box>
       <!--left-->
-      <a-box position="-1.5 1.5 0.5" rotation="0 0 90" depth="3" width="3" height="0.1" color="#4CC3D9"></a-box>
+      <a-box position="-1.5 1.5 0" rotation="0 0 90" depth="3" width="3" height="0.1" color="#4CC3D9"></a-box>
 
-      <a-text value="Turn Around" text.align="center" position="0 1.5 -0.9" align="center"></a-text>
-
+      <!--door-->    
+      <a-box position="0 1.5 1.5" rotation="90 0 0" depth="3" width="3" height="0.1" color="#FF2D2D" onclick="goToSeaPage()"></a-box>     
+      <a-entity line="start: 0 3 1.45; end: 0 0 1.45; color:black; linewidth: 50"></a-entity>
+      <a-text value="Enter" text.align="center" position="0 1.6 1.4" rotation="0 180 0" color="#FFFFFF" align="center"></a-text>
+      <a-text value="(click here)" text.align="center" position="0 1.3 1.4" rotation="0 180 0" color="#FFFFFF" align="center"></a-text>
+      <!--buttons--> 
+      <a-circle position="-1.2 1.7 1.4" rotation="0 180 0" radius="0.05" color="#28FF28"></a-circle>
+      <a-circle position="-1.2 1.5 1.4" rotation="0 180 0" radius="0.05" color="#00FFFF"></a-circle>
+      <a-circle position="-1.2 1.3 1.4" rotation="0 180 0" radius="0.05" color="#B15BFF"></a-circle>
+      <a-circle position="1.2 1.7 1.4" rotation="0 180 0" radius="0.05" color="#28FF28"></a-circle>
+      <a-circle position="1.2 1.5 1.4" rotation="0 180 0" radius="0.05" color="#00FFFF"></a-circle>
+      <a-circle position="1.2 1.3 1.4" rotation="0 180 0" radius="0.05" color="#B15BFF"></a-circle>
     </a-scene>
+
+    <!--change scene-->
+    <script>
+      function goToSeaPage() {
+        window.location.href = 'file:///C:/Users/User/Desktop/sea.html';
+      }
+    </script>
 
   </body>
 </html>
