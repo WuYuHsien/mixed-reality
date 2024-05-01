@@ -6,7 +6,7 @@
   <body>
     <a-scene vr-mode-ui="enabled: true">
       <!--VR environment -->
-      <a-entity laser-controls="hand: right" raycaster="showLine: true; far: 1000; objects: .clickable"></a-entity>
+      <a-entity laser-controls="hand: right" raycaster="showLine: true; far: 1000"></a-entity>
       <a-entity camera look-controls></a-entity>
       <a-camera position="0 1.6 0"></a-camera>
       
@@ -38,12 +38,24 @@
 
       <!--monsters-->
       <a-octahedron position="-1 2.3 2" color="#FFFF37" radius="5" scale="0.05 0.05 0.05" class="clickable"></a-octahedron>
-      <a-octahedron position="1 2.3 2" color="##4EFEB3" radius="5" scale="0.05 0.05 0.05" class="clickable"></a-octahedron>
+      <a-octahedron position="1 2.3 2" color="#4EFEB3" radius="5" scale="0.05 0.05 0.05" class="clickable"></a-octahedron>
       <a-octahedron position="2 2.3 -1.5" color="#B15BFF" radius="5" scale="0.05 0.05 0.05" class="clickable"></a-octahedron>
       <a-octahedron position="2 2.3 0.5" color="#FF60AF" radius="5" scale="0.05 0.05 0.05" class="clickable"></a-octahedron>
       <a-octahedron position="-2 2.3 -1.5" color="#4DFFFF" radius="5" scale="0.05 0.05 0.05" class="clickable"></a-octahedron>
       <a-octahedron position="-2 2.3 0.5" color="#FF0000" radius="5" scale="0.05 0.05 0.05" class="clickable"></a-octahedron>
-    </a-scene>
+
+      <!-- Click event handler -->
+      <script>
+        AFRAME.registerComponent('click-handler', {
+          init: function () {
+            var el = this.el;
+            el.addEventListener('click', function () {
+              // Change the color of the clicked object to #4F4F4F
+              el.setAttribute('color', '#4F4F4F');
+            });
+          }
+        });
+      </script>
 
         <!--change scene-->
         <script>
@@ -73,18 +85,6 @@
   });
 </script>
 
-      <!-- Click event handler -->
-      <script>
-        AFRAME.registerComponent('click-handler', {
-          init: function () {
-            var el = this.el;
-            el.addEventListener('click', function () {
-              // Change the color of the clicked object to #4F4F4F
-              el.setAttribute('color', '#4F4F4F');
-            });
-          }
-        });
-      </script>
 
   </body>
 </html>
