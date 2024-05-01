@@ -6,8 +6,8 @@
   <body>
     <a-scene vr-mode-ui="enabled: true">
       <!--VR environment -->
-      <a-entity laser-controls="hand: right"></a-entity>
-      <a-entity laser-controls="hand: left"></a-entity>
+      <a-entity laser-controls="hand: right" raycaster="showLine: true; far: 20"></a-entity>
+      <a-entity laser-controls="hand: left" raycaster="showLine: true; far: 20"></a-entity>
       <a-entity camera look-controls></a-entity>
       <a-camera position="0 1.6 0"></a-camera>
 
@@ -40,7 +40,7 @@
     <!--change scene-->
     <script>
       function goToSeaPage() {
-        window.location.href = 'sea.html';
+        window.location.href = 'file:///C:/Users/User/Desktop/sea.html';
       }
     </script>
 
