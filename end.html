@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene vr-mode-ui="enabled: true">
+      <!--VR environment -->
+      <a-entity laser-controls="hand: right" raycaster="showLine: true; far: 1000"></a-entity>
+      <a-entity camera look-controls></a-entity>
+      <a-camera position="0 1.6 -2.5"></a-camera>
+
+      <!--beach-->
+      <a-box position="0 0 -1" depth="4" width="6" height="0.5" color="#FFE153"></a-box>
+      <a-plane position="0 0 -5" rotation="-90 0 0" width="30" height="30" color="#46A3FF"></a-plane>
+      <!--moon-->
+      <a-sky color="#CAFFFF"></a-sky>
+      <a-sphere position="0 6.5 3" radius="0.5" color="#FFFF37"></a-sphere>
+
+      <!--NPC-->
+      <a-sphere position="0.7 1.5 0.2" radius="0.3" color="#003D79"></a-sphere>
+      <a-cone position="0.7 0 0.2" color="#003D79" radius-bottom="1" height="3.5"></a-cone>
+      <a-sphere position="-0.7 1.5 0.2" radius="0.3" color="#BF0060"></a-sphere>
+      <a-cone position="-0.7 0 0.2" color="#BF0060" radius-bottom="1" height="3.5"></a-cone>
+      <a-text value="Thank you so much!" rotation="0 180 0" scale="0.5 0.5 0.5" position="0.7 2 0.2" color="#000000" align="center"></a-text>
+      <a-text value="Goodbye! Goodbye!" rotation="0 180 0" scale="0.5 0.5 0.5" position="-0.7 2 0.2" color="#000000" align="center"></a-text>
+
+      <!--tree-->
+      <a-cylinder position="2.5 1.5 0.5" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="2.5 3.5 0.5" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>     
+      <a-cylinder position="2.5 1.5 -0.5" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="2.5 3.5 -0.5" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="2.5 1.5 -1.5" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="2.5 3.5 -1.5" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="-2.5 1.5 0.5" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-2.5 3.5 0.5" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>     
+      <a-cylinder position="-2.5 1.5 -0.5" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-2.5 3.5 -0.5" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      <a-cylinder position="-2.5 1.5 -1.5" radius="0.2" height="2.5" color="#750000"></a-cylinder>
+      <a-cone position="-2.5 3.5 -1.5" color="#00BB00" radius-bottom="1" height="1.5"></a-cone>
+      
+      <!--lift-->
+      <a-cone position="0 3 -4" rotation="0 45 0" radius-bottom="2" radius-top="0" height="1.5" color="#E0E0E0" segments-radial="4"></a-cone>
+      <a-box position="0 1 -4" depth="2" width="2" height="3" color="#FF2D2D"></a-box>
+    </a-scene>
+  </body>
+</html>
