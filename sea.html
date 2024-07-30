@@ -9,6 +9,10 @@
       <a-entity laser-controls="hand: right" raycaster="showLine: true; far: 1000"></a-entity>
       <a-entity camera look-controls></a-entity>
       <a-camera position="0 1.6 0"></a-camera>
+      <a-assets>
+        <audio id="sea" src="assets/bubbles.mp3"></audio>
+      </a-assets>
+      <a-entity id="soundEntity" sound="src: #sea; autoplay: true; loop: true" position="0 0 0"></a-entity>
       
       <!--sea-->
       <a-sky color="#46A3FF"></a-sky>
