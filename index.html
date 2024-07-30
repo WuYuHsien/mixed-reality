@@ -50,24 +50,6 @@
       <a-text value="Enter" position="0 1.5 -3" color="#FFFFFF" align="center"></a-text>
       <a-text value="(click here)" position="0 1.2 -3" color="#FFFFFF" align="center"></a-text>
     </a-scene>
-
-    <!--change scene-->
-    <script>
-      function goToLiftPage() {
-        window.location.href = 'lift.html';
-      }
-    </script>
-
-      <script>
-    function goToLiftPage() {
-      window.location.href = 'lift.html';
-    }
-
-    document.querySelector('a-scene').addEventListener('loaded', () => {
-      const soundEntity = document.querySelector('#soundEntity');
-      soundEntity.components.sound.playSound();
-    });
-  </script>
     
   </body>
 </html>
