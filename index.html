@@ -58,5 +58,16 @@
       }
     </script>
 
+      <script>
+    function goToLiftPage() {
+      window.location.href = 'lift.html';
+    }
+
+    document.querySelector('a-scene').addEventListener('loaded', () => {
+      const soundEntity = document.querySelector('#soundEntity');
+      soundEntity.components.sound.playSound();
+    });
+  </script>
+    
   </body>
 </html>
